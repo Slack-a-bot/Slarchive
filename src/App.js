@@ -1,9 +1,12 @@
-import React from "react";
+/* eslint-disable react/jsx-filename-extension */
+import React from 'react';
 
-const App = () => ( 
+function App() {
+  return (
     <div>
-        <h1>Hello React adfdfgfddfgddfdffdfgfdy</h1>
+      <h1>Hello React adfdfgfddfgddfdffdfgfdy</h1>
     </div>
-);
+  );
+}
 
 export default App;
