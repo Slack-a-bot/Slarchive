@@ -1,13 +1,17 @@
 import * as React from 'react';
 import ReactDOM from 'react-dom/client';
+import { StyledEngineProvider } from '@mui/material/styles';
+import './styles.css'
+
 import MessageBox from './components/MessageBox';
 import Demo from './demo';
-import { StyledEngineProvider } from '@mui/material/styles';
+import EmojisContainer from './components/EmojisContainer';
 
 function App() {
   return (
     <div>
-      <MessageBox />
+      {/* <MessageBox /> */}
+      <EmojisContainer />
       <StyledEngineProvider injectFirst>
         <Demo />
       </StyledEngineProvider>

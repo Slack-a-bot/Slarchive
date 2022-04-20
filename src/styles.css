@@ -1,0 +1,24 @@
+/* html {
+  background-color: aliceblue;
+} */
+
+.App {
+  background-color: red;
+}
+
+.emojisContainer{
+  background-color: blueviolet;
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%; 
+  padding: 5%;
+}
+
+.emojiBox {
+  background-color: rgb(191, 206, 219);
+  display: grid;
+  grid-template-columns: 100%;
+  justify-items: center;
+  align-items: center;
+  margin: 2%;
+  border-radius: 5%;
+}
