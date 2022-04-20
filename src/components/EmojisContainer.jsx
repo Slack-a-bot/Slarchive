@@ -8,22 +8,23 @@ const EmojisContainer = () => {
   const [database, setDatabase] = useState([]);
   // Intial Render
   useEffect(() => {
-    fetch('/api')
+    fetch('/api/?emojis="true"')
       .then((response) => response.json())
       .then((data) => {
         setDatabase(data);
-        console.log(data);
+        // console.log(data);
       });
   }, []);
 
   const emojisArr = [];
 
   const loadSavedEmojisClickHandler = () => {
-    fetch('/api')
+    fetch('/api/?emojis="true"')
       .then((response) => response.json())
       .then((data) => {
+        console.log(data)
         setDatabase(data);
-        console.log(data);
+        // console.log(data);
       });
   }
   

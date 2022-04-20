@@ -8,16 +8,22 @@ const app = express();
 const PORT = 3000;
 const slackController = require('./controllers/controller.js');
 
-const { getData } = slackController;
+const { getData, getEmojis } = slackController;
 
 /**
  * handle parsing request body
  */
 app.use(express.json());
 
+// app.get('/emojis', getEmojis, (req, res) => res.status(200).json(
+//   res.locals.data,
+// ));
+
 app.get('/api', getData, (req, res) => res.status(200).json(
   res.locals.data,
 ));
+
+
 // .......................Error Handlers ............................................................
 
 // catch-all route hanlder for any requests to an unknown route
