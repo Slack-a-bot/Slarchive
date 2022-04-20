@@ -28,17 +28,20 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.jsx?/,
         exclude: /node_modules/,
-        loader: require.resolve('babel-loader'),
+        loader: 'babel-loader',
+        options: {
+          presets: ['@babel/preset-env', '@babel/preset-react'],
+        },
       },
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.png|svg|jpg|gif$/,
-        use: ['file-loader'],
+        test: /\.svg$/,
+        use: ['@svgr/webpack', 'file-loader', 'svg-inline-loader'],
       },
     ],
   },
