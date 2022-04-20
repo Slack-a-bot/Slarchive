@@ -1,10 +1,10 @@
-/* eslint-disable react/jsx-filename-extension */
 import React from 'react';
+import MessageBox from './components/MessageBox';
 
 function App() {
   return (
     <div>
-      <h1>Hello React adfdfgfddfgddfdffdfgfdy</h1>
+      <MessageBox />
     </div>
   );
 }

@@ -7,10 +7,10 @@ const db = require('../models/slackModel.js');
 const slackController = {};
 
 slackController.getData = (req, res, next) => {
-  const text = 'SELECT * FROM slack;';
+  const text = 'SELECT * FROM conversations;';
   try {
     db.query(text, (error, result) => {
-      console.log(result.rows);
+      console.log(result.rows[0]);
       return next();
     });
   } catch {

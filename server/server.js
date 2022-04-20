@@ -13,7 +13,6 @@ const { getData } = slackController;
 /**
  * handle parsing request body
  */
-
 app.use(express.json());
 
 app.get('/', getData, (req, res) => res.status(200).send('hi'));
