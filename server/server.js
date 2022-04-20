@@ -15,8 +15,9 @@ const { getData } = slackController;
  */
 app.use(express.json());
 
-app.get('/', getData, (req, res) => res.status(200).send('hi'));
-
+app.get('/api', getData, (req, res) => res.status(200).json(
+  res.locals.data,
+));
 // .......................Error Handlers ............................................................
 
 // catch-all route hanlder for any requests to an unknown route
