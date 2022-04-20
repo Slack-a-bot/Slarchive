@@ -45,6 +45,10 @@ const EmojisContainer = () => {
       // console.log(database[i].emoji_link)
     }
   }
+
+  const handleClear = () => {
+    setDatabase('')
+  }
   
   for(let i = 0; i < database.length; i++) {
     if (!excludeObj[database[i].emoji_name]) emojisArr.push(<Emojis key={`Emojis${database[i].emoji_name}`} emojiData={database[i]} />)
@@ -53,10 +57,11 @@ const EmojisContainer = () => {
   return (
     <>
       <div className='emojisContainer' >
-        {emojisArr}
+        {emojisArr.length ? emojisArr : 'No saved emojis detected. Save some using /downloademojis!'}
       </div>
       <button onClick={loadSavedEmojisClickHandler}>Load Saved Emojis</button>
-      <button onClick={downloadClickHandler}>Download emojis</button>
+      <button onClick={downloadClickHandler}>Download Emojis</button>
+      <button onClick={handleClear}>Clear Saved Emojis</button>
     </>
   );
 };

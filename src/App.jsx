@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { StyledEngineProvider } from '@mui/material/styles';
 import './styles.css'
 
-import MessageBox from './components/MessageBox';
+import Menu from './components/menu'
 import Demo from './demo';
 import EmojisContainer from './components/EmojisContainer';
 

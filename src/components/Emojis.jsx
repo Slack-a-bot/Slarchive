@@ -5,14 +5,14 @@ import React, { useState, useEffect } from 'react';
 
 const Emojis = (props) => {
   const {id, emoji_name, emoji_link} = props.emojiData;
-  const {color, setColor} = useState('aliceblue');
+  const [color, setColor] = useState('rgb(191, 206, 219)');
   const handleClick = () => {
-    alert('e')
+    if (color === 'blueviolet') setColor('rgb(191, 206, 219)');
+    else setColor('blueviolet');
   }
   return (
     <>
       <div className="emojiBox" style={{backgroundColor: color}} onClick={handleClick}>
-        <input id="checkbox" type="checkbox" />
         <img src={emoji_link} alt="error" />
         {emoji_name}
       </div>
