@@ -10,7 +10,7 @@ import EmojisContainer from './components/EmojisContainer';
 function App() {
   return (
     <div>
-      {/* <MessageBox /> */}
+      <Menu />
       <EmojisContainer />
       <StyledEngineProvider injectFirst>
         <Demo />
