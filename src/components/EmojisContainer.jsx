@@ -3,6 +3,13 @@
 /* eslint-disable react/jsx-no-useless-fragment */
 import React, { useState, useEffect } from 'react';
 import Emojis from './emojis';
+import { saveAs } from 'file-saver';
+
+const excludeObj = {
+  shipit: true,
+  white_square: true,
+  black_square: true
+}
 
 const EmojisContainer = () => {
   const [database, setDatabase] = useState([]);
@@ -27,23 +34,29 @@ const EmojisContainer = () => {
         // console.log(data);
       });
   }
+
+  const downloadClickHandler = () => {
+    // saveAs()
+    // console.log(database)
+    for (let i = 0; i < database.length; i++) {
+      if (!excludeObj[database[i].emoji_name]) {
+        saveAs(database[i].emoji_link, database[i].emoji_name);
+      }
+      // console.log(database[i].emoji_link)
+    }
+  }
   
   for(let i = 0; i < database.length; i++) {
-    const excludeObj = {
-      shipit: true,
-      white_square: true,
-      black_square: true
-    }
-    if (!excludeObj[database[i].emoji_name]) emojisArr.push(<Emojis key={`Emojis${database[i].emoji_name}`} emojiData={database[i]}/>)
+    if (!excludeObj[database[i].emoji_name]) emojisArr.push(<Emojis key={`Emojis${database[i].emoji_name}`} emojiData={database[i]} />)
   }
 
   return (
     <>
-      <div className='emojisContainer'>
+      <div className='emojisContainer' >
         {emojisArr}
       </div>
       <button onClick={loadSavedEmojisClickHandler}>Load Saved Emojis</button>
-      <button>Download emojis</button>
+      <button onClick={downloadClickHandler}>Download emojis</button>
     </>
   );
 };

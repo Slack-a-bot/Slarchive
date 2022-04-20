@@ -22,3 +22,10 @@
   margin: 2%;
   border-radius: 5%;
 }
+
+#checkbox {
+  position: relative;
+  /* bottom: 0%; */
+  right: 40%;
+  /* width: 10%; */
+}
