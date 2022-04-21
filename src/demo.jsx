@@ -33,9 +33,8 @@ export default function EnhancedTable() {
   const [page, setPage] = React.useState(0);
   const [dense, setDense] = React.useState(false);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
+  const [database, setDatabase] = React.useState();
 
-  const [database, setDatabase] = useState();
-  // Intial Render
   useEffect(() => {
     fetch('/api')
       .then((response) => response.json())
@@ -304,6 +303,8 @@ export default function EnhancedTable() {
 
   // Avoid a layout jump when reaching the last page with empty rows.
   const emptyRows = page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rows.length) : 0;
+
+
 
   return (
     <Box sx={{ width: '100%' }}>
